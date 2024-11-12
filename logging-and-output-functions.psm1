@@ -1,7 +1,7 @@
 # Logger.psm1
 
 # Initialize the log file path based on the calling script's path
-$Script:parentPath = (Split-Path -Path $MyInvocation.MyCommand.Path)
+$Script:parentPath = ( $MyInvocation.PSScriptRoot )
 
 # Helper function to log/write messages
 function Write-Message {
