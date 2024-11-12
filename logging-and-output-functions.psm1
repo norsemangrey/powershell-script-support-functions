@@ -1,3 +1,8 @@
+# Logger.psm1
+
+# Initialize the log file path based on the calling script's path
+$Script:parentPath = (Split-Path -Path $MyInvocation.MyCommand.Path)
+
 # Helper function to log/write messages
 function Write-Message {
     param (
@@ -40,7 +45,7 @@ function Write-Message {
     }
 
     # Path to the log file
-    $logFilePath = (Join-Path $PSScriptRoot "log.txt")
+    if ( $parentPath ) { $logFilePath = (Join-Path $parentPath "log.txt") } else { $logFilePath = (Join-Path $PSScriptRoot "log.txt") }
 
     # Append the formatted message to the log file
     $formattedMessage | Out-File -FilePath $logFilePath -Append
