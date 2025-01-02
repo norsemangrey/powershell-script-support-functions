@@ -51,7 +51,7 @@ try {
     }
 
     # Extract the ZIP file
-    Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force -ErrorAction Stop
+    #Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force -ErrorAction Stop
 
     Write-Host "Repository extracted successfully."
 
