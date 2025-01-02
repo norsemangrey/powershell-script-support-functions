@@ -35,8 +35,15 @@ try {
 
     Write-Host "Repository downloaded successfully to $zipFilePath."
 
-
     Write-Host "Extracting ZIP file to $extractPath..."
+
+    if (Test-Path $extractPath) {
+
+        Remove-Item -Path $extractPath -Recurse -Force
+
+        Write-Host "Cleaned up existing extract path: $extractPath."
+
+    }
 
     # Extract the ZIP file
     Expand-Archive -Path $zipFilePath -DestinationPath $extractPath -Force -ErrorAction Stop
