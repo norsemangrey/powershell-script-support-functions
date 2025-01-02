@@ -5,6 +5,11 @@ param(
     [string] $script
 )
 
+Write-Host $user
+Write-Host $repo
+Write-Host $branch
+Write-Host $script
+
 # Verify all required arguments are provided
 if (-not $user -or -not $repo -or -not $branch -or -not $script) {
 
