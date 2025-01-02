@@ -1,14 +1,11 @@
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 param(
     [string] $user="norsemangrey",
     [string] $repo,
     [string] $branch="main",
     [string] $script
 )
-
-Write-Host $user
-Write-Host $repo
-Write-Host $branch
-Write-Host $script
 
 # Verify all required arguments are provided
 if (-not $user -or -not $repo -or -not $branch -or -not $script) {
@@ -61,7 +58,7 @@ try {
         Write-Host "Running the script at $scriptPath..."
 
         # Run the script
-        Start-Process "powershell.exe" $scriptPath
+        Start-Process "powershell.exe" -ArgumentList "-NoExit -NoProfile -ExecutionPolicy RemoteSigned -File $scriptPath
 
     } else {
 
