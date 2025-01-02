@@ -1,5 +1,3 @@
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-
 param(
     [string] $user="norsemangrey",
     [string] $repo,
