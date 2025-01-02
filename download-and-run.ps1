@@ -84,5 +84,3 @@ try {
     }
 
 }
-
-#Invoke-Expression -Command $(Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/norsemangrey/windows-software-deployer/main/DownloadAndRunScript.ps1') -user 'norsemangrey' -repo 'windows-software-deployer' -branch 'main' -script 'orchestrator.ps1'
