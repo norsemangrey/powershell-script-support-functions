@@ -58,7 +58,7 @@ try {
         Write-Host "Running the script at $scriptPath..."
 
         # Run the script
-        Start-Process "powershell.exe" -ArgumentList "-NoExit -NoProfile -ExecutionPolicy RemoteSigned -File $scriptPath
+        Start-Process "powershell.exe" -ArgumentList "-NoExit -NoProfile -ExecutionPolicy RemoteSigned -File $scriptPath"
 
     } else {
 
