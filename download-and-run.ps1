@@ -61,7 +61,7 @@ try {
         Write-Host "Running the script at $scriptPath..."
 
         # Run the script
-        & $scriptPath
+        Start-Process "powershell.exe" $scriptPath
 
     } else {
 
